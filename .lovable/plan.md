@@ -17,7 +17,7 @@ Dark, premium sports look: deep charcoal background, warm gold accent, bold cond
   5. Media community / trending creators
 - Below: stats strip, featured partners, latest media, call-to-action to join as partner, footer.
 
-**Kalawar** - box and nav link open your live Kalawar website in a new tab (you will provide the address; placeholder until then).
+**Kalawar** - your existing Kalawar project ("Kalawar_main_website_6_aug") is used exactly as it is, not recreated or modified. It runs on its own system, which cannot run inside this app, so it stays a separate website (hosted as it is today). The Kalawar box and navbar link open it, just like they do now.
 
 **GYM & Fitness (/gyms)** - searchable/filterable list of registered gyms (city, facilities, price), gym detail page, "Join as a Partner" button.
 - /gyms/register - multi-step registration form (owner, gym details, plans, facilities).
@@ -43,4 +43,5 @@ One account system across the app. A single login page with tabs for Media, GYM 
 - Unique page titles/descriptions for every route.
 
 ## Open item
-- Live Kalawar website address needed for the Kalawar link.
+- The web address where your Kalawar project is running, so the Kalawar link points to it (a placeholder is used until you share it).
+- Kalawar members sign in to Media with sample Kalawar-role accounts here; true single sign-on with the Kalawar site is not possible because it is a separate system.
