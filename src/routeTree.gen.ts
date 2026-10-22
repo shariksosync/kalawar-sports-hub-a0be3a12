@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AcademiesIndexRouteImport } from './routes/academies.index'
+import { Route as AcademiesIdRouteImport } from './routes/academies.$id'
+import { Route as AcademiesLoginRouteImport } from './routes/academies.login'
+import { Route as AcademiesRegisterRouteImport } from './routes/academies.register'
+import { Route as GymsIndexRouteImport } from './routes/gyms.index'
+import { Route as GymsIdRouteImport } from './routes/gyms.$id'
+import { Route as GymsLoginRouteImport } from './routes/gyms.login'
+import { Route as GymsRegisterRouteImport } from './routes/gyms.register'
+import { Route as MediaLoginRouteImport } from './routes/media.login'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademiesIndexRoute = AcademiesIndexRouteImport.update({
+  id: '/academies/',
+  path: '/academies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademiesIdRoute = AcademiesIdRouteImport.update({
+  id: '/academies/$id',
+  path: '/academies/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademiesLoginRoute = AcademiesLoginRouteImport.update({
+  id: '/academies/login',
+  path: '/academies/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademiesRegisterRoute = AcademiesRegisterRouteImport.update({
+  id: '/academies/register',
+  path: '/academies/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GymsIndexRoute = GymsIndexRouteImport.update({
+  id: '/gyms/',
+  path: '/gyms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GymsIdRoute = GymsIdRouteImport.update({
+  id: '/gyms/$id',
+  path: '/gyms/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GymsLoginRoute = GymsLoginRouteImport.update({
+  id: '/gyms/login',
+  path: '/gyms/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GymsRegisterRoute = GymsRegisterRouteImport.update({
+  id: '/gyms/register',
+  path: '/gyms/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaLoginRoute = MediaLoginRouteImport.update({
+  id: '/media/login',
+  path: '/media/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/academies/$id': typeof AcademiesIdRoute
+  '/academies/login': typeof AcademiesLoginRoute
+  '/academies/register': typeof AcademiesRegisterRoute
+  '/gyms/$id': typeof GymsIdRoute
+  '/gyms/login': typeof GymsLoginRoute
+  '/gyms/register': typeof GymsRegisterRoute
+  '/media/login': typeof MediaLoginRoute
+  '/academies/': typeof AcademiesIndexRoute
+  '/gyms/': typeof GymsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/academies/$id': typeof AcademiesIdRoute
+  '/academies/login': typeof AcademiesLoginRoute
+  '/academies/register': typeof AcademiesRegisterRoute
+  '/gyms/$id': typeof GymsIdRoute
+  '/gyms/login': typeof GymsLoginRoute
+  '/gyms/register': typeof GymsRegisterRoute
+  '/media/login': typeof MediaLoginRoute
+  '/academies': typeof AcademiesIndexRoute
+  '/gyms': typeof GymsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/academies/$id': typeof AcademiesIdRoute
+  '/academies/login': typeof AcademiesLoginRoute
+  '/academies/register': typeof AcademiesRegisterRoute
+  '/gyms/$id': typeof GymsIdRoute
+  '/gyms/login': typeof GymsLoginRoute
+  '/gyms/register': typeof GymsRegisterRoute
+  '/media/login': typeof MediaLoginRoute
+  '/academies/': typeof AcademiesIndexRoute
+  '/gyms/': typeof GymsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/login'
+    | '/academies/$id'
+    | '/academies/login'
+    | '/academies/register'
+    | '/gyms/$id'
+    | '/gyms/login'
+    | '/gyms/register'
+    | '/media/login'
+    | '/academies/'
+    | '/gyms/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/login'
+    | '/academies/$id'
+    | '/academies/login'
+    | '/academies/register'
+    | '/gyms/$id'
+    | '/gyms/login'
+    | '/gyms/register'
+    | '/media/login'
+    | '/academies'
+    | '/gyms'
+  id:
+    | '__root__'
+    | '/'
+    | '/login'
+    | '/academies/$id'
+    | '/academies/login'
+    | '/academies/register'
+    | '/gyms/$id'
+    | '/gyms/login'
+    | '/gyms/register'
+    | '/media/login'
+    | '/academies/'
+    | '/gyms/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LoginRoute: typeof LoginRoute
+  AcademiesIdRoute: typeof AcademiesIdRoute
+  AcademiesLoginRoute: typeof AcademiesLoginRoute
+  AcademiesRegisterRoute: typeof AcademiesRegisterRoute
+  GymsIdRoute: typeof GymsIdRoute
+  GymsLoginRoute: typeof GymsLoginRoute
+  GymsRegisterRoute: typeof GymsRegisterRoute
+  MediaLoginRoute: typeof MediaLoginRoute
+  AcademiesIndexRoute: typeof AcademiesIndexRoute
+  GymsIndexRoute: typeof GymsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academies/': {
+      id: '/academies/'
+      path: '/academies'
+      fullPath: '/academies/'
+      preLoaderRoute: typeof AcademiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academies/$id': {
+      id: '/academies/$id'
+      path: '/academies/$id'
+      fullPath: '/academies/$id'
+      preLoaderRoute: typeof AcademiesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academies/login': {
+      id: '/academies/login'
+      path: '/academies/login'
+      fullPath: '/academies/login'
+      preLoaderRoute: typeof AcademiesLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academies/register': {
+      id: '/academies/register'
+      path: '/academies/register'
+      fullPath: '/academies/register'
+      preLoaderRoute: typeof AcademiesRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gyms/': {
+      id: '/gyms/'
+      path: '/gyms'
+      fullPath: '/gyms/'
+      preLoaderRoute: typeof GymsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gyms/$id': {
+      id: '/gyms/$id'
+      path: '/gyms/$id'
+      fullPath: '/gyms/$id'
+      preLoaderRoute: typeof GymsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gyms/login': {
+      id: '/gyms/login'
+      path: '/gyms/login'
+      fullPath: '/gyms/login'
+      preLoaderRoute: typeof GymsLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gyms/register': {
+      id: '/gyms/register'
+      path: '/gyms/register'
+      fullPath: '/gyms/register'
+      preLoaderRoute: typeof GymsRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/login': {
+      id: '/media/login'
+      path: '/media/login'
+      fullPath: '/media/login'
+      preLoaderRoute: typeof MediaLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LoginRoute: LoginRoute,
+  AcademiesIdRoute: AcademiesIdRoute,
+  AcademiesLoginRoute: AcademiesLoginRoute,
+  AcademiesRegisterRoute: AcademiesRegisterRoute,
+  GymsIdRoute: GymsIdRoute,
+  GymsLoginRoute: GymsLoginRoute,
+  GymsRegisterRoute: GymsRegisterRoute,
+  MediaLoginRoute: MediaLoginRoute,
+  AcademiesIndexRoute: AcademiesIndexRoute,
+  GymsIndexRoute: GymsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
