@@ -29,7 +29,11 @@ import { Route as GymsIndexRouteImport } from './routes/gyms.index'
 import { Route as GymsIdRouteImport } from './routes/gyms.$id'
 import { Route as GymsLoginRouteImport } from './routes/gyms.login'
 import { Route as GymsRegisterRouteImport } from './routes/gyms.register'
+import { Route as MediaIndexRouteImport } from './routes/media.index'
 import { Route as MediaLoginRouteImport } from './routes/media.login'
+import { Route as MediaNotificationsRouteImport } from './routes/media.notifications'
+import { Route as MediaRegisterRouteImport } from './routes/media.register'
+import { Route as MediaUIdRouteImport } from './routes/media.u.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -131,9 +135,29 @@ const GymsRegisterRoute = GymsRegisterRouteImport.update({
   path: '/gyms/register',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MediaIndexRoute = MediaIndexRouteImport.update({
+  id: '/media/',
+  path: '/media/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MediaLoginRoute = MediaLoginRouteImport.update({
   id: '/media/login',
   path: '/media/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaNotificationsRoute = MediaNotificationsRouteImport.update({
+  id: '/media/notifications',
+  path: '/media/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRegisterRoute = MediaRegisterRouteImport.update({
+  id: '/media/register',
+  path: '/media/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaUIdRoute = MediaUIdRouteImport.update({
+  id: '/media/u/$id',
+  path: '/media/u/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -155,10 +179,14 @@ export interface FileRoutesByFullPath {
   '/gyms/login': typeof GymsLoginRoute
   '/gyms/register': typeof GymsRegisterRoute
   '/media/login': typeof MediaLoginRoute
+  '/media/notifications': typeof MediaNotificationsRoute
+  '/media/register': typeof MediaRegisterRoute
   '/academies/': typeof AcademiesIndexRoute
   '/academy-admin/': typeof AcademyAdminIndexRoute
   '/gym-admin/': typeof GymAdminIndexRoute
   '/gyms/': typeof GymsIndexRoute
+  '/media/': typeof MediaIndexRoute
+  '/media/u/$id': typeof MediaUIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -176,10 +204,14 @@ export interface FileRoutesByTo {
   '/gyms/login': typeof GymsLoginRoute
   '/gyms/register': typeof GymsRegisterRoute
   '/media/login': typeof MediaLoginRoute
+  '/media/notifications': typeof MediaNotificationsRoute
+  '/media/register': typeof MediaRegisterRoute
   '/academies': typeof AcademiesIndexRoute
   '/academy-admin': typeof AcademyAdminIndexRoute
   '/gym-admin': typeof GymAdminIndexRoute
   '/gyms': typeof GymsIndexRoute
+  '/media': typeof MediaIndexRoute
+  '/media/u/$id': typeof MediaUIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -200,10 +232,14 @@ export interface FileRoutesById {
   '/gyms/login': typeof GymsLoginRoute
   '/gyms/register': typeof GymsRegisterRoute
   '/media/login': typeof MediaLoginRoute
+  '/media/notifications': typeof MediaNotificationsRoute
+  '/media/register': typeof MediaRegisterRoute
   '/academies/': typeof AcademiesIndexRoute
   '/academy-admin/': typeof AcademyAdminIndexRoute
   '/gym-admin/': typeof GymAdminIndexRoute
   '/gyms/': typeof GymsIndexRoute
+  '/media/': typeof MediaIndexRoute
+  '/media/u/$id': typeof MediaUIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -225,10 +261,14 @@ export interface FileRouteTypes {
     | '/gyms/login'
     | '/gyms/register'
     | '/media/login'
+    | '/media/notifications'
+    | '/media/register'
     | '/academies/'
     | '/academy-admin/'
     | '/gym-admin/'
     | '/gyms/'
+    | '/media/'
+    | '/media/u/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -246,10 +286,14 @@ export interface FileRouteTypes {
     | '/gyms/login'
     | '/gyms/register'
     | '/media/login'
+    | '/media/notifications'
+    | '/media/register'
     | '/academies'
     | '/academy-admin'
     | '/gym-admin'
     | '/gyms'
+    | '/media'
+    | '/media/u/$id'
   id:
     | '__root__'
     | '/'
@@ -269,10 +313,14 @@ export interface FileRouteTypes {
     | '/gyms/login'
     | '/gyms/register'
     | '/media/login'
+    | '/media/notifications'
+    | '/media/register'
     | '/academies/'
     | '/academy-admin/'
     | '/gym-admin/'
     | '/gyms/'
+    | '/media/'
+    | '/media/u/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -287,8 +335,12 @@ export interface RootRouteChildren {
   GymsLoginRoute: typeof GymsLoginRoute
   GymsRegisterRoute: typeof GymsRegisterRoute
   MediaLoginRoute: typeof MediaLoginRoute
+  MediaNotificationsRoute: typeof MediaNotificationsRoute
+  MediaRegisterRoute: typeof MediaRegisterRoute
   AcademiesIndexRoute: typeof AcademiesIndexRoute
   GymsIndexRoute: typeof GymsIndexRoute
+  MediaIndexRoute: typeof MediaIndexRoute
+  MediaUIdRoute: typeof MediaUIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -433,11 +485,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GymsRegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/media/': {
+      id: '/media/'
+      path: '/media'
+      fullPath: '/media/'
+      preLoaderRoute: typeof MediaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/media/login': {
       id: '/media/login'
       path: '/media/login'
       fullPath: '/media/login'
       preLoaderRoute: typeof MediaLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/notifications': {
+      id: '/media/notifications'
+      path: '/media/notifications'
+      fullPath: '/media/notifications'
+      preLoaderRoute: typeof MediaNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/register': {
+      id: '/media/register'
+      path: '/media/register'
+      fullPath: '/media/register'
+      preLoaderRoute: typeof MediaRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media/u/$id': {
+      id: '/media/u/$id'
+      path: '/media/u/$id'
+      fullPath: '/media/u/$id'
+      preLoaderRoute: typeof MediaUIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -491,8 +571,12 @@ const rootRouteChildren: RootRouteChildren = {
   GymsLoginRoute: GymsLoginRoute,
   GymsRegisterRoute: GymsRegisterRoute,
   MediaLoginRoute: MediaLoginRoute,
+  MediaNotificationsRoute: MediaNotificationsRoute,
+  MediaRegisterRoute: MediaRegisterRoute,
   AcademiesIndexRoute: AcademiesIndexRoute,
   GymsIndexRoute: GymsIndexRoute,
+  MediaIndexRoute: MediaIndexRoute,
+  MediaUIdRoute: MediaUIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
